@@ -99,3 +99,23 @@ The following technologies and services were used to implement the Slack notific
 | Amazon Linux 2023 | Operating system for the Jenkins Controller, Maven Agent, and Nexus Repository Server. |
 | Ubuntu 24.04 LTS | Operating system hosting the SonarQube Server. |
 | Nginx | Configured as a reverse proxy for the SonarQube web interface. |
+
+
+☁️ AWS Infrastructure
+
+The Slack notification integration was implemented within an enterprise Continuous Integration (CI) environment hosted on Amazon Web Services (AWS). The infrastructure consisted of four Amazon EC2 instances, each dedicated to a specific role within the CI pipeline.
+
+EC2 Instance| Operating System| Instance Type| Purpose
+"jenkins-server"| Amazon Linux 2023| t3.small| Hosted the Jenkins Controller and orchestrated the CI pipeline, including Slack notifications.
+"maven-agent"| Amazon Linux 2023| t3.small| Executed Maven builds, unit tests, Checkstyle analysis, SonarScanner, and artifact deployment on behalf of Jenkins.
+"Sonar-Server"| Ubuntu 24.04 LTS| t3.small| Hosted SonarQube Community Build for static code analysis and Quality Gate validation.
+"nexus-server"| Amazon Linux 2023| t3.small| Hosted Nexus Repository Manager for storing versioned application artifacts.
+
+Infrastructure Summary
+
+- Cloud Provider: Amazon Web Services (AWS)
+- Compute Service: Amazon EC2
+- Total EC2 Instances: 4
+- Networking: All instances deployed within the same Amazon VPC using private networking for secure inter-service communication.
+- SSH Connectivity: Jenkins connected securely to the Maven Agent using SSH private key credentials managed within Jenkins.
+- Additional AWS Services: Amazon VPC, Subnets, Internet Gateway, Route Tables, Security Groups, and EC2 Key Pairs
