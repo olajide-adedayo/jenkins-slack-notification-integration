@@ -290,3 +290,36 @@ Slack workspace (#devops-cicd) receiving an automated SUCCESS notification from 
 ![Jenkins Slack Configuration](screenshots/05-jenkins-slack-system-configuration.png)
 
 Jenkins Slack configuration showing the workspace, credentials, default channel, Custom Slack App Bot User enabled, and successful connection test.
+
+
+## 🔧 Troubleshooting
+
+During the implementation of the Slack Notification Integration, several configuration and integration issues were encountered and successfully resolved. The following table summarizes the problems and their solutions.
+
+| Issue | Cause | Resolution |
+|-------|-------|------------|
+| Jenkins could not find the configured JDK. | The tool name in the Jenkinsfile (JDK17) did not match the configured tool name in Jenkins. | Updated the tools block to use the configured name: JDK 17. |
+| Jenkins could not find the configured Maven installation. | The Maven tool name in the Jenkinsfile did not match the configured installation. | Updated the tools block to use Maven 3.9.14. |
+| SonarScanner tool not found. | The scanner name in the pipeline did not match the Jenkins tool configuration. | Configured the SonarQube Scanner in Jenkins and updated the pipeline to use the correct tool name (sonar-scanner). |
+| SonarQube server configuration not found. | The pipeline referenced a SonarQube server name that was different from the configured installation. | Updated the pipeline to use the configured server name (Sonar Server). |
+| SonarQube analysis timed out while waiting for the Quality Gate. | Jenkins did not receive the webhook callback from SonarQube. | Configured the SonarQube webhook to point to the Jenkins webhook endpoint and verified network connectivity. |
+| readMavenPom step not recognized. | The Pipeline Utility Steps plugin was not installed. | Installed the *Pipeline Utility Steps* plugin and restarted Jenkins. |
+| Nexus artifact upload failed due to missing credentials. | The credential ID in the pipeline did not match the credential stored in Jenkins. | Updated the pipeline to use the correct credential ID (nexus-login). |
+| Nexus artifact upload failed because the repository could not be found. | The repository name in the pipeline did not match the repository created in Nexus. | Updated the repository name from vprofile-release to vprofile-repo. |
+| Nexus artifact deployment failed after restarting AWS instances. | The Nexus server private IP address changed after instance restart. | Updated the Nexus server private IP address in the Jenkinsfile environment configuration. |
+| Slack notifications failed even though the pipeline completed successfully. | Jenkins was configured with a Bot User OAuth Token, but *Custom Slack App Bot User* was disabled. | Enabled *Custom Slack App Bot User* in the Jenkins Slack configuration. |
+| Slack Test Connection failed. | Jenkins Slack plugin configuration was incomplete. | Verified the Slack workspace, Bot User OAuth Token credentials, default channel, enabled *Custom Slack App Bot User, and confirmed **Test Connection: Success*. |
+| Slack notifications were not delivered to the channel. | Slack integration required additional verification after configuration changes. | Re-ran the pipeline and confirmed successful notification delivery to the #devops-cicd Slack channel. |
+
+### ✅ Final Outcome
+
+All issues were successfully resolved, resulting in a fully functional Enterprise Continuous Integration (CI) pipeline with:
+
+- Jenkins Pipeline (Pipeline as Code)
+- Maven Build Automation
+- Unit and Integration Testing
+- Checkstyle Static Code Analysis
+- SonarQube Code Quality Analysis
+- SonarQube Quality Gate Validation
+- Nexus Repository Artifact Publishing
+- Automated Slack Build Notifications
