@@ -16,3 +16,12 @@ The implementation extends an existing CI pipeline for the VProfile Java applica
 The notification process is fully integrated into the CI workflow, which includes source code checkout from GitHub, application build with Apache Maven, unit testing, Checkstyle analysis, SonarQube code quality analysis, Quality Gate validation, artifact publication to Nexus Repository Manager, and automated Slack notifications.
 
 This project demonstrates practical experience in integrating collaboration platforms with CI pipelines to improve team communication, build visibility, and operational efficiency while following enterprise DevOps best practices.
+
+
+🎯 Business Objective
+
+In modern software development, timely communication is essential for maintaining fast and reliable delivery pipelines. Relying on engineers to manually monitor Jenkins builds is inefficient and can delay the identification and resolution of build failures.
+
+The objective of this project was to enhance an existing enterprise Continuous Integration (CI) pipeline by integrating Slack as a real-time notification platform. This enables Jenkins to automatically notify development and DevOps teams whenever a pipeline execution succeeds or fails, providing immediate visibility into build outcomes without requiring users to access the Jenkins dashboard.
+
+By incorporating Slack notifications into the CI workflow, the solution improves collaboration, accelerates feedback loops, reduces response time to build issues, and increases operational transparency. This integration reflects a common enterprise DevOps practice, where CI/CD platforms are connected with team communication tools to support efficient software delivery and rapid incident response.
