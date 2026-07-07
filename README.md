@@ -247,3 +247,46 @@ The implementation involved:
 - Executing the complete CI pipeline and verifying successful notification delivery to Slack.
 
 The completed solution provides automated, real-time build notifications, improving collaboration, visibility, and operational awareness across the software delivery process.
+
+
+## 📸 Project Screenshots
+
+The following screenshots provide visual evidence of the successful implementation of the Slack notification integration.
+
+### 1. Jenkins Pipeline Overview
+
+![Jenkins Pipeline Overview](screenshots/01-jenkins-pipeline-overview-success.png)
+
+Complete Jenkins pipeline showing all stages executed successfully.
+
+---
+
+### 2. Jenkins Console Output
+
+![Jenkins Console Output](screenshots/02-jenkins-console-output-success.png)
+
+Jenkins Console Output confirming successful pipeline execution and Slack notification delivery.
+
+---
+
+### 3. Jenkinsfile (Pipeline as Code)
+
+![Jenkinsfile](screenshots/03-github-jenkinsfile-pipeline-as-code.png)
+
+GitHub repository displaying the Jenkinsfile with the Slack notification implementation.
+
+---
+
+### 4. Slack Success Notification
+
+![Slack Notification](screenshots/04-slack-channel-success-notification.png)
+
+Slack workspace (#devops-cicd) receiving an automated SUCCESS notification from the Jenkins pipeline.
+
+---
+
+### 5. Jenkins Slack Configuration
+
+![Jenkins Slack Configuration](screenshots/05-jenkins-slack-system-configuration.png)
+
+Jenkins Slack configuration showing the workspace, credentials, default channel, Custom Slack App Bot User enabled, and successful connection test.
