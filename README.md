@@ -193,3 +193,57 @@ Send Slack Notification
 Slack Channel (#devops-cicd)
 
 The pipeline completed successfully and automatically delivered a SUCCESS notification to the configured Slack channel, providing immediate visibility into the build outcome for the engineering team.
+
+
+💻 Jenkinsfile Implementation
+
+The Slack notification capability was implemented by extending the existing declarative Jenkins Pipeline. A color mapping was defined to display successful builds in green and failed builds in red within Slack.
+
+A global "post" block was added to the pipeline so that Jenkins automatically sends a notification after every pipeline execution, regardless of the build result.
+
+Slack Notification Logic
+
+def COLOR_MAP = [
+    'SUCCESS': 'good',
+    'FAILURE': 'danger',
+]
+
+post {
+    always {
+        echo 'Slack Notifications.'
+
+        slackSend(
+            channel: '#devops-cicd',
+            color: COLOR_MAP[currentBuild.currentResult],
+            message: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build #${env.BUILD_NUMBER}\nMore info: ${env.BUILD_URL}"
+        )
+    }
+}
+
+The notification includes:
+
+- Build status (SUCCESS or FAILURE)
+- Jenkins job name
+- Build number
+- Direct link to the Jenkins build
+
+This implementation enables team members to access build information directly from Slack without manually logging into Jenkins.
+
+---
+
+🚀 Implementation Summary
+
+The Slack notification integration was successfully incorporated into the existing Enterprise Jenkins Continuous Integration (CI) pipeline hosted on AWS.
+
+The implementation involved:
+
+- Installing and configuring the Jenkins Slack Notification Plugin.
+- Creating a custom Slack App with Bot User OAuth authentication.
+- Storing the Slack Bot OAuth Token securely in Jenkins Credentials.
+- Configuring Slack Workspace and default notification channel.
+- Updating the Jenkins Pipeline to include automated post-build Slack notifications.
+- Migrating the pipeline to Pipeline Script from SCM using the Jenkinsfile stored in the GitHub repository.
+- Validating Slack connectivity through Jenkins.
+- Executing the complete CI pipeline and verifying successful notification delivery to Slack.
+
+The completed solution provides automated, real-time build notifications, improving collaboration, visibility, and operational awareness across the software delivery process.
