@@ -119,3 +119,77 @@ Infrastructure Summary
 - Networking: All instances deployed within the same Amazon VPC using private networking for secure inter-service communication.
 - SSH Connectivity: Jenkins connected securely to the Maven Agent using SSH private key credentials managed within Jenkins.
 - Additional AWS Services: Amazon VPC, Subnets, Internet Gateway, Route Tables, Security Groups, and EC2 Key Pairs
+
+
+⚙️ Jenkins & Slack Configuration
+
+The Slack notification integration was implemented by configuring Jenkins to communicate securely with Slack using the Jenkins Slack Notification Plugin and a custom Slack App with Bot User OAuth authentication.
+
+Jenkins Configuration
+
+Configuration| Value
+Jenkins Job| "vprofile-ci"
+Job Type| Pipeline
+Pipeline Definition| Pipeline Script from SCM
+Source Code Repository| GitHub
+Branch| "local"
+Pipeline File| "Jenkinsfile"
+Build Agent| "maven-agent"
+Build Trigger| Manual
+
+Slack Configuration
+
+Configuration| Value
+Slack Workspace| "olajidedevopslab"
+Slack Channel| "#devops-cicd"
+Authentication| Bot User OAuth Token
+Jenkins Credential Type| Secret Text
+Jenkins Credential ID| "slack-token"
+Slack Plugin| Jenkins Slack Notification Plugin
+Custom Slack App Bot User| Enabled
+Test Connection| Successful
+
+The Slack Bot User OAuth Token was stored securely in Jenkins Credentials and referenced by the Slack plugin. After each pipeline execution, Jenkins automatically sent a notification containing the build status, job name, build number, and a direct link to the build details.
+
+---
+
+🔄 Pipeline Workflow
+
+After integrating Slack notifications, the Jenkins CI pipeline executed the following workflow automatically:
+
+GitHub Repository
+        │
+        ▼
+Jenkins Pipeline
+        │
+        ▼
+Checkout Source Code
+        │
+        ▼
+Maven Build
+        │
+        ▼
+Unit Tests
+        │
+        ▼
+Checkstyle Analysis
+        │
+        ▼
+SonarQube Analysis
+        │
+        ▼
+Quality Gate Validation
+        │
+        ▼
+Archive WAR Artifact
+        │
+        ▼
+Publish Artifact to Nexus Repository
+        │
+        ▼
+Send Slack Notification
+        │
+        ▼
+Slack Channel (#devops-cicd)
+
+The pipeline completed successfully and automatically delivered a SUCCESS notification to the configured Slack channel, providing immediate visibility into the build outcome for the engineering team.
