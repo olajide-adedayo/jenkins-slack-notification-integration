@@ -355,3 +355,56 @@ Key Outcomes
 - Automated real-time build notifications for successful and failed pipeline executions.
 - Improved communication and operational visibility within the CI workflow.
 - Implemented an end-to-end solution following enterprise DevOps practices and ready for future Continuous Delivery (CD) enhancements.
+
+
+🎯 Skills Demonstrated
+
+This project demonstrates hands-on experience with enterprise DevOps tools, Continuous Integration (CI) practices, and collaboration platform integration.
+
+DevOps & CI/CD
+
+- Continuous Integration (CI)
+- Pipeline as Code
+- Jenkins Administration
+- Jenkins Pipeline Development
+- Pipeline Automation
+- Build Automation
+- CI Pipeline Troubleshooting
+
+AWS Cloud
+
+- Amazon EC2
+- Multi-Server Infrastructure
+- Amazon VPC Networking
+- Linux Server Administration
+- SSH Connectivity
+
+Build & Quality Management
+
+- Apache Maven
+- Java Build Automation
+- Unit Testing
+- Checkstyle Static Code Analysis
+- SonarQube Code Quality Analysis
+- Quality Gate Validation
+
+Artifact Management
+
+- Nexus Repository Manager
+- Artifact Versioning
+- Maven Artifact Deployment
+
+Collaboration & Automation
+
+- Slack Integration
+- Slack Bot User OAuth Authentication
+- Jenkins Credentials Management
+- Automated Build Notifications
+
+Version Control
+
+- Git
+- GitHub
+- Repository Management
+- Pipeline Script from SCM
+- Documentation using Markdown
