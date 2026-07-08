@@ -7,6 +7,25 @@
 [![Slack](https://img.shields.io/badge/Slack-Build%20Notifications-4A154B)](https://slack.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
+
+📑 Table of Contents
+
+- "📖 Project Overview" (#-project-overview)
+- "🎯 Business Objective" (#-business-objective)
+- "🏗️ Solution Architecture" (#️-solution-architecture)
+- "🛠️ Technology Stack" (#️-technology-stack)
+- "☁️ AWS Infrastructure" (#️-aws-infrastructure)
+- "⚙️ Jenkins & Slack Configuration" (#️-jenkins--slack-configuration)
+- "🔄 Pipeline Workflow" (#-pipeline-workflow)
+- "💻 Jenkinsfile Implementation" (#-jenkinsfile-implementation)
+- "🚀 Implementation Summary" (#-implementation-summary)
+- "📸 Project Screenshots" (#-project-screenshots)
+- "🔧 Troubleshooting" (#-troubleshooting)
+- "📚 Lessons Learned" (#-lessons-learned)
+- "🎯 Skills Demonstrated" (#-skills-demonstrated)
+- "🚀 Future Enhancements" (#-future-enhancements)
+- "👨‍💻 Author" (#-author)
+
 📖 Project Overview
 
 This project demonstrates the integration of Slack notifications into an enterprise Jenkins Continuous Integration (CI) pipeline hosted on Amazon Web Services (AWS). The primary objective was to automate real-time build notifications, enabling development and DevOps teams to receive immediate feedback whenever a pipeline execution completes successfully or fails.
