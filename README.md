@@ -426,3 +426,16 @@ The current implementation provides automated Slack notifications for an enterpr
 - Implement Infrastructure as Code (IaC) using Terraform or AWS CloudFormation for repeatable environment provisioning.
 
 These enhancements represent common enterprise DevOps practices that improve scalability, security, and operational efficiency as CI/CD platforms mature.
+
+
+👨‍💻 Author
+
+Olajide Adedayo
+
+DevOps Engineer with hands-on experience in designing, implementing, and documenting cloud-native infrastructure and CI/CD solutions using AWS and modern DevOps tools. Passionate about automation, Infrastructure as Code, Continuous Integration/Continuous Delivery (CI/CD), cloud computing, and building reliable, scalable software delivery pipelines.
+
+Connect with Me
+
+- GitHub: https://github.com/olajide-adedayo
+- LinkedIn: https://www.linkedin.com/in/olajide-adedayo/
+- Medium: https://medium.com/@olajideadedayo230
